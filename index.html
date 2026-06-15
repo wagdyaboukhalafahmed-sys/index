@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>خدمات العزل والصرف الصحي - الرياض</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a227;
+      --gold-light: #f0c94a;
+      --dark: #0d1b2a;
+      --darker: #071117;
+      --green: #25d366;
+      --green-dark: #128c7e;
+      --blue: #1e90ff;
+      --gold-btn: #c9a227;
+      --white: #ffffff;
+      --card-bg: #f7f9fc;
+    }
+
+    html, body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 12px 8px 120px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: var(--white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: linear-gradient(160deg, #071117 0%, #0d2137 60%, #0a1a2e 100%);
+      padding: 24px 20px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .logo-circle {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 4px rgba(201,162,39,0.3), 0 0 20px rgba(201,162,39,0.4);
+      flex-shrink: 0;
+      font-size: 32px;
+    }
+
+    .header-text { text-align: right; }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--darker);
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-title {
+      color: var(--gold-light);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.3;
+      text-shadow: 0 2px 10px rgba(201,162,39,0.4);
+    }
+
+    .header-city {
+      color: #a0c4e8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ===== PRICE BANNER ===== */
+    .price-banner {
+      background: linear-gradient(90deg, #c9a227, #f0c94a, #c9a227);
+      text-align: center;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .price-label {
+      color: var(--darker);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .price-value {
+      color: var(--darker);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .price-tag {
+      background: var(--darker);
+      color: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ===== SERVICES ===== */
+    .section { padding: 18px 18px 12px; }
+
+    .section-title {
+      color: var(--dark);
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 4px solid var(--gold);
+      padding-right: 10px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .service-item {
+      background: var(--white);
+      border: 1.5px solid #e8edf3;
+      border-radius: 14px;
+      padding: 12px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-item:active { transform: scale(0.97); }
+
+    .service-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .service-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section {
+      background: #f0f6ff;
+      padding: 16px 18px;
+      border-top: 2px dashed #d0dce8;
+      border-bottom: 2px dashed #d0dce8;
+    }
+
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .feature-chip {
+      background: linear-gradient(135deg, var(--dark), #1a3a5c);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ===== CONTACT AREA ===== */
+    .contact-section {
+      padding: 18px 18px 14px;
+      background: var(--white);
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 4px 15px rgba(37,211,102,0.35);
+      transition: opacity 0.2s;
+    }
+
+    .btn-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1a3a5c, #0d2137);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 4px 15px rgba(13,27,42,0.3);
+      border: 1.5px solid var(--gold);
+      transition: opacity 0.2s;
+    }
+
+    .btn-whatsapp:active, .btn-call:active { opacity: 0.85; }
+
+    /* ===== SIDE FLOATING BUTTONS ===== */
+    .side-buttons {
+      position: fixed;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 200;
+    }
+
+    .side-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+      transition: transform 0.2s;
+    }
+
+    .side-btn:active { transform: scale(0.92); }
+
+    .side-btn-wa  { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .side-btn-tel { background: linear-gradient(135deg, #c9a227, #f0c94a); }
+    .side-btn-tel2 { background: linear-gradient(135deg, #1e90ff, #0060cc); }
+
+    /* ===== BOTTOM FLOATING BAR ===== */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      display: flex;
+      gap: 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+
+    .bottom-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 10px;
+      text-decoration: none;
+      font-family: 'Cairo', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: #fff;
+      transition: opacity 0.2s;
+    }
+
+    .bottom-btn:active { opacity: 0.85; }
+
+    .bottom-btn-wa  {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      border-radius: 0 16px 0 0;
+    }
+
+    .bottom-btn-call {
+      background: linear-gradient(135deg, #0d2137, #1a3a5c);
+      border-right: 2px solid var(--gold);
+      border-radius: 16px 0 0 0;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2px 18px;
+    }
+
+    /* ===== DESIGNER CREDIT ===== */
+    .designer-credit {
+      text-align: center;
+      padding: 10px 16px 6px;
+      font-size: 11px;
+      color: #7a8fa8;
+    }
+
+    .designer-credit a {
+      color: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ===== FOOTER COPYRIGHT ===== */
+    .footer-copy {
+      text-align: center;
+      padding: 4px 16px 14px;
+      font-size: 10px;
+      color: #aab8c8;
+    }
+
+    /* Pulse animation for side buttons */
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+      70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .side-btn-wa { animation: pulse 2s infinite; }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDE FLOATING BUTTONS ===== -->
+<div class="side-buttons">
+  <a class="side-btn side-btn-wa" href="https://wa.me/966595886362" target="_blank" title="واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a class="side-btn side-btn-tel" href="tel:0595886362" title="اتصال ذهبي">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#0d1b2a"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <a class="side-btn side-btn-tel2" href="tel:0595886362" title="اتصال أزرق">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- ===== MAIN CARD ===== -->
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="logo-circle">🏠</div>
+      <div class="header-text">
+        <div class="badge">⭐ خدمات معتمدة ⭐</div>
+        <div class="header-title">خدمات العزل والصرف الصحي</div>
+        <div class="header-city">📍 الرياض — خدمة 24 ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICE BANNER -->
+  <div class="price-banner">
+    <span class="price-label">سعر الكشف</span>
+    <span class="price-value">100 ريال</span>
+    <span class="price-tag">✅ عرض خاص</span>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <div class="section-title">🔧 قائمة الخدمات</div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">🌡️</div>
+        <div class="service-name">عزل مواسير وخفض درجة الحرارة</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🪨</div>
+        <div class="service-name">عزل الصوف الصخري</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🚿</div>
+        <div class="service-name">تسليك مجاري</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🛢️</div>
+        <div class="service-name">تنظيف خزانات المياه</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">💧</div>
+        <div class="service-name">عزل خزانات المياه</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🔩</div>
+        <div class="service-name">صيانة وإصلاح شاملة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <div class="features-section">
+    <div class="section-title">✨ مميزاتنا</div>
+    <div class="features-list">
+      <span class="feature-chip">⚡ سرعة في التنفيذ</span>
+      <span class="feature-chip">🛡️ ضمان على الأعمال</span>
+      <span class="feature-chip">👷 فنيون متخصصون</span>
+      <span class="feature-chip">🕐 خدمة 24 ساعة</span>
+      <span class="feature-chip">💰 أسعار منافسة</span>
+      <span class="feature-chip">📍 الرياض وضواحيها</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <div class="contact-section">
+    <div class="section-title">📞 تواصل معنا</div>
+    <div class="contact-buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966595886362?text=السلام%20عليكم%2C%20أريد%20الاستفسار%20عن%20خدماتكم" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        واتساب الآن
+      </a>
+      <a class="btn-call" href="tel:0595886362">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#c9a227"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        اتصل بنا — 0595886362
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DESIGNER CREDIT -->
+  <div class="designer-credit">
+    تم التصميم بواسطة
+    <a href="https://wa.me/201029095046" target="_blank">م. نجوي إبراهيم</a>
+  </div>
+
+  <!-- FOOTER COPYRIGHT -->
+  <div class="footer-copy">
+    © 2025 جميع الحقوق محفوظة — خدمات العزل والصرف الصحي - الرياض
+  </div>
+
+</div>
+
+<!-- ===== BOTTOM FLOATING BAR ===== -->
+<div class="bottom-bar">
+  <a class="bottom-btn bottom-btn-call" href="tel:0595886362">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    اتصل الآن
+  </a>
+  <a class="bottom-btn bottom-btn-wa" href="https://wa.me/966595886362?text=السلام%20عليكم%2C%20أريد%20الاستفسار%20عن%20خدماتكم" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    واتساب
+  </a>
+</div>
+
+<script>
+  // Smooth tap feedback for all clickable elements
+  document.querySelectorAll('a').forEach(function(el) {
+    el.addEventListener('touchstart', function() {
+      this.style.opacity = '0.82';
+    }, { passive: true });
+    el.addEventListener('touchend', function() {
+      this.style.opacity = '1';
+    }, { passive: true });
+  });
+</script>
+</body>
+</html>
